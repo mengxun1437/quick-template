@@ -1,2 +1,2 @@
-# quick-template
-my own quick template
+## ${projectName}
+${projectDescription}
