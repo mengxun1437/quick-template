@@ -7,6 +7,7 @@
     "qt": "src/index.js"
   },
   "scripts": {
+    "publish": "node scripts/publish-handler.js && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
