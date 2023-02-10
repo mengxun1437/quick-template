@@ -134,10 +134,10 @@ async function down(resp) {
 
 function handleFiles(resp) {
   const dir = path.join(process.cwd(), resp.projectName);
-  if (!isExist(path) || !isDir(path)) {
-    log(`No such directory ${dir}`, "error");
-    return;
-  }
+  // if (!isExist(path) || !isDir(path)) {
+  //   log(`No such directory ${dir}`, "error");
+  //   return;
+  // }
 
   // 全局变量替换
   function handleFile(_path) {
