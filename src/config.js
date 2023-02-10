@@ -42,7 +42,7 @@ function getGlobalConfig() {
       );
     }
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return DEFAULT_CONFIG;
   }
 }
