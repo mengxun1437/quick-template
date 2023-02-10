@@ -1,6 +1,6 @@
 {
   "name": "@mengxun1437/q-template",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "create template for my self quickly",
   "main": "src/index.js",
   "bin": {
