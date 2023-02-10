@@ -2,7 +2,7 @@
 my own quick template
 
 ## Install
-- `npm install @mengxun1437/quick-template -g`
+- `npm install @mengxun/quick-template -g`
 
 ## How to Use?
 You should to set your own git storage of your templates, every template should be stored on each branch, the branch's name is same as the template's name
