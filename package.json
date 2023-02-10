@@ -7,7 +7,7 @@
     "qt": "src/index.js"
   },
   "scripts": {
-    "publish": "node scripts/publish-handler.js && npm publish --access=public",
+    "prepublish": "node scripts/publish-handler.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
