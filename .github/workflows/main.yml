@@ -4,8 +4,9 @@
 name: My Node.js Publish Package
 
 on:
-  release:
-    types: [push]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -16,7 +17,6 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-
 
   publish-npm:
     needs: build

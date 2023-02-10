@@ -1,5 +1,5 @@
 {
-  "name": "quick-template",
+  "name": "@mengxun1437/quick-template",
   "version": "1.0.0",
   "description": "create template for my self quickly",
   "main": "src/index.js",
