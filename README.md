@@ -32,7 +32,7 @@ qt config globalProps -a <global props e.g. projectName/projectDescription>
 
 qt config handleFiles -a <handle files e.g. package.json/README.md>
 
-the cli will find the path from handleFiles and then find the globalProps in these files to replace them
+# the cli will find the path from handleFiles and then find the globalProps in these files to replace them
 
 ```
 
