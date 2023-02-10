@@ -1,14 +1,12 @@
 {
   "name": "@mengxun1437/q-template",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "create template for my self quickly",
   "main": "src/index.js",
   "bin": {
     "qt": "src/index.js"
   },
-  "scripts": {
-    "pub": "npm --no-git-tag-version version patch --force && npm publish --access=public"
-  },
+  "scripts": {},
   "keywords": [
     "template",
     "quick template",
