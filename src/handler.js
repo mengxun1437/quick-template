@@ -37,6 +37,13 @@ const createOptions = [
     validate: (str) => {
       return Boolean(str?.length);
     },
+    default: "<projectName>",
+  },
+  {
+    type: "input",
+    name: "projectDescription",
+    message: "Please input the description of your project",
+    default: "<projectDescription>",
   },
   {
     type: "confirm",
@@ -134,6 +141,7 @@ async function down(resp) {
 
 function handleFiles(resp) {
   const dir = path.join(process.cwd(), resp.projectName);
+
   // if (!isExist(path) || !isDir(path)) {
   //   log(`No such directory ${dir}`, "error");
   //   return;
@@ -142,17 +150,17 @@ function handleFiles(resp) {
   // 全局变量替换
   function handleFile(_path) {
     const file = path.join(dir, `./${_path}`);
-    if (isExist(pathPackageJSON) && isFile(pathPackageJSON)) {
+    if (isExist(file) && isFile(file)) {
       // ignore_security_alert
-      const source = fs.readFileSync(pathPackageJSON, {
+      const source = fs.readFileSync(file, {
         encoding: "utf-8",
       });
-      let replaced = sourcePackageJSON.replaceAll(
-        "${projectName}",
-        resp.projectName
-      );
-      replaced = replaced.replaceAll("${projectDescription}", "");
-      fs.writeFileSync(file, source, "utf-8");
+      let replaced = source;
+      globalConfig.globalProps?.forEach((name) => {
+        const reg = new RegExp("\\${" + name + "}", "g");
+        replaced = replaced.replace(reg, resp?.[name] || "");
+      });
+      fs.writeFileSync(file, replaced, "utf-8");
     }
   }
 
