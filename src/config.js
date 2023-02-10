@@ -1,7 +1,7 @@
 const { isExist, fs } = require("./utils");
 const path = require("path");
 
-const GLOBAL_CONFIG_PATH = path.join(__dirname, "./.quick-template");
+const GLOBAL_CONFIG_PATH = path.join(__dirname, "../.quick-template");
 const DEFAULT_CONFIG = {
   // 模版地址
   git: {
