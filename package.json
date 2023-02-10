@@ -7,8 +7,7 @@
     "qt": "src/index.js"
   },
   "scripts": {
-    "prepublish": "node scripts/publish-handler.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "node scripts/publish-handler.js"
   },
   "keywords": [
     "template",
