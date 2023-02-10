@@ -7,7 +7,7 @@
     "qt": "src/index.js"
   },
   "scripts": {
-    "prepublish": "node scripts/publish-handler.js"
+    "pub": "npm --no-git-tag-version version patch --force && npm publish --access=public"
   },
   "keywords": [
     "template",
