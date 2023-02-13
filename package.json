@@ -1,6 +1,6 @@
 {
   "name": "@mengxun1437/quick-template",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "create template for my self quickly",
   "main": "src/index.js",
   "bin": {
@@ -20,5 +20,14 @@
     "download-git-repo": "^3.0.2",
     "inquirer": "^8.2.5",
     "rimraf": "^4.1.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengxun1437/quick-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mengxun1437/quick-template/issues"
+  },
+  "homepage": "https://github.com/mengxun1437/quick-template#readme"
 }
