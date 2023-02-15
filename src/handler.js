@@ -46,6 +46,12 @@ const createOptions = [
     default: "<projectDescription>",
   },
   {
+    type: "input",
+    name: "projectAuthor",
+    message: "Please input the author of your project",
+    default: "<projectAuthor>",
+  },
+  {
     type: "confirm",
     name: "createConfirm",
     message: "Are you sure to create this project?",

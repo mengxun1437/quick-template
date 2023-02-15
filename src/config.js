@@ -11,7 +11,7 @@ const DEFAULT_CONFIG = {
     name: "quick-template",
   },
   // 全局替换
-  globalProps: ["projectName", "projectDescription"],
+  globalProps: ["projectName", "projectDescription", "projectAuthor"],
   // 模板选择
   templates: [],
   handleFiles: ["package.json", "README.md"],
