@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mengxun1437/${projectName}.git"
+    "url": "git+https://github.com/${projectAuthor}/${projectName}.git"
   },
   "keywords": [],
-  "author": "mengxun1437",
+  "author": "${projectAuthor}",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mengxun1437/${projectName}/issues"
+    "url": "https://github.com/${projectAuthor}/${projectName}/issues"
   },
-  "homepage": "https://github.com/mengxun1437/${projectName}#readme"
+  "homepage": "https://github.com/${projectAuthor}/${projectName}#readme"
 }
