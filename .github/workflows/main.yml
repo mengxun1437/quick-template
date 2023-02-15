@@ -30,4 +30,4 @@ jobs:
       - run: npm ci
       - run: npm publish --access=public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.MENGXUN1437_NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.MENGXUN_NPM_TOKEN}}

@@ -1,6 +1,6 @@
 {
-  "name": "@mengxun1437/quick-template",
-  "version": "0.0.3",
+  "name": "@mengxun/quick-template",
+  "version": "0.0.1",
   "description": "create template for my self quickly",
   "main": "src/index.js",
   "bin": {
@@ -12,7 +12,7 @@
     "quick template",
     "git"
   ],
-  "author": "mengxun1437",
+  "author": "mengxun",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
