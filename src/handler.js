@@ -16,7 +16,7 @@ const getExtraOptions = (template) =>
   globalConfig.extraCommands?.[template]?.map((i) => ({
     type: "input",
     name: i,
-    message: "Please input the extra command: " + template,
+    message: "Please input the extra command: " + i,
     default: `<${i}>`,
   })) || [];
 
