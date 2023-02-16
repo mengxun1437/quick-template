@@ -1,33 +1,53 @@
 {
-  "name": "@mengxun/quick-template",
-  "version": "0.0.9",
-  "description": "create template for my self quickly",
-  "main": "src/index.js",
-  "bin": {
-    "qt": "src/index.js"
+  "name": "${projectName}",
+  "description": "${projectDescription}",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production nuxt build",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "electron": "electron src/app.js",
+    "generate": "cross-env NODE_ENV=production nuxt generate",
+    "gh": "cross-env NODE_ENV=production BASE=nuxtify nuxt generate"
   },
-  "scripts": {},
-  "keywords": [
-    "template",
-    "quick template",
-    "git"
-  ],
-  "author": "mengxun",
-  "license": "ISC",
+  "author": "${projectAuthor}",
   "dependencies": {
-    "chalk": "^4.1.2",
-    "commander": "^10.0.0",
-    "download-git-repo": "^3.0.2",
-    "inquirer": "^8.2.5",
-    "rimraf": "^4.1.2"
+    "@fortawesome/fontawesome-free": "^6.0.0",
+    "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/composition-api": "^0.23.4",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "@nuxtjs/toast": "^3.3.1",
+    "@vue/cli-service": "^5.0.8",
+    "consola": "^2.15.0",
+    "nuxt": "^2.15.3",
+    "vuex-module-decorators": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@nuxt/types": "^2.15.4",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/vuetify": "^1.11.3",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
+    "electron": "^23.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.2.1"
+  },
+  "license": "MIT",
+  "nodemonConfig": {
+    "watch": [
+      "./*"
+    ],
+    "ignore": [
+      "dist/*",
+      "src/*"
+    ],
+    "ext": "ts,json",
+    "exec": "nuxt --optimize_for_size"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mengxun1437/quick-template.git"
+    "url": "git+https://github.com/${repoAuthor}/${projectName}.git"
   },
   "bugs": {
-    "url": "https://github.com/mengxun1437/quick-template/issues"
+    "url": "https://github.com/${repoAuthor}/${projectName}/issues"
   },
-  "homepage": "https://github.com/mengxun1437/quick-template#readme"
+  "homepage": "https://github.com/${repoAuthor}/${projectName}#readme"
 }
