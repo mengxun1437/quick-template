@@ -18,7 +18,7 @@ const DEFAULT_CONFIG = {
   handleFiles: ["package.json", "README.md"],
   // 需要展示给用户的命令, template, projectName, projectDescription, projectAuthor是必展示
   extraCommands: {
-    "nodejs-cli": ["repoAuthor"],
+    "nodejs-cli": ["repoAuthor", "command"],
   },
 };
 

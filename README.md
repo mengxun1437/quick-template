@@ -73,4 +73,38 @@ And you can also use `qt edit config` to change
 
 `qt init` is a quick command for you to choice the template of your own, incase every time you create a new project with complex options
 
+## Other
+here is the default config in this cli 
+```json
+{
+    "git": {
+        "type": "github",
+        "origin": "https://github.com",
+        "owner": "mengxun1437",
+        "name": "quick-template"
+    },
+    "globalProps": [
+        "projectName",
+        "projectDescription",
+        "projectAuthor"
+    ],
+    "templates": [
+        "nodejs-cli"
+    ],
+    "handleFiles": [
+        "package.json",
+        "README.md"
+    ],
+    "extraCommands": {
+        "nodejs-cli": [
+            "repoAuthor",
+            "command"
+        ]
+    }
+}
+```
+
+you can see this https://github.com/mengxun1437/quick-template/tree/nodejs-cli to check my nodejs-cli template
+
+
 
