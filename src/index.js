@@ -1,7 +1,8 @@
 #! /usr/bin/env node
 const { program } = require("commander");
-const { handleCreate, handleConfig } = require("./handler");
 
+/**
+ * e.g.
 program
   .command("init")
   .description("choose the project you want to create quickly")
@@ -14,5 +15,6 @@ program
   .option("-a, --add <value>", "add config options")
   .option("-d, --delete <value>", "delete config options")
   .action(handleConfig);
+ */
 
 program.parse(process.argv);

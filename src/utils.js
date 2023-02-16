@@ -12,9 +12,23 @@ function isExist(path) {
   return fs.existsSync(path);
 }
 
+const LogPrefix = {
+  common: "",
+  success: "[SUCCESS] ",
+  warning: "[WARNING] ",
+  error: "[ERROR] ",
+  info: "[INFO] ",
+};
+
+// type = common | success | warning | error | info
+function log(msg, type = "common") {
+  console.log(`${LogPrefix[type]}${msg}`);
+}
+
 module.exports = {
   fs,
   isDir,
   isFile,
   isExist,
+  log,
 };
