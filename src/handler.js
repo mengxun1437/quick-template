@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const rimraf = require("rimraf");
 const path = require("path");
 const download = require("download-git-repo");
-const { fs, isDir, isFile, isExist } = require("./utils");
+const { fs, isDir, isFile, isExist, log } = require("./utils");
 const {
   getGlobalConfig,
   getGitUrl,
@@ -12,13 +12,16 @@ const {
 
 const globalConfig = getGlobalConfig();
 
-const LogPrefix = {
-  common: "",
-  success: "[SUCCESS] ",
-  warning: "[WARNING] ",
-  error: "[ERROR] ",
-  info: "[INFO] ",
+const extraOptionsMap = {
+  repoAuthor: {
+    type: "input",
+    name: "repoAuthor",
+    message: "Please input the username of your repo",
+    default: "<repoAuthor>",
+  },
 };
+
+const extraOptions = globalConfig.showCommands?.map((i) => extraOptionsMap[i]);
 
 const createOptions = [
   {
@@ -51,6 +54,7 @@ const createOptions = [
     message: "Please input the author of your project",
     default: "<projectAuthor>",
   },
+  ...extraOptions,
   {
     type: "confirm",
     name: "createConfirm",
@@ -112,11 +116,6 @@ function handleConfig(str, option) {
     }
     setGlobalConfig(globalConfig);
   }
-}
-
-// type = common | success | warning | error | info
-function log(msg, type = "common") {
-  console.log(`${LogPrefix[type]}${msg}`);
 }
 
 async function getTemplateFromRepo(resp) {

@@ -11,10 +11,18 @@ const DEFAULT_CONFIG = {
     name: "quick-template",
   },
   // 全局替换
-  globalProps: ["projectName", "projectDescription", "projectAuthor"],
+  globalProps: [
+    "projectName",
+    "projectDescription",
+    "projectAuthor",
+    "repoAuthor",
+  ],
   // 模板选择
   templates: [],
+  // 需要全局替换的文件
   handleFiles: ["package.json", "README.md"],
+  // 需要展示给用户的命令, template, projectName, projectDescription, projectAuthor是必展示
+  showCommands: ["repoAuthor"],
 };
 
 const KEYS_TYPE_MAP = {
@@ -25,6 +33,7 @@ const KEYS_TYPE_MAP = {
   globalProps: "array",
   templates: "array",
   handleFiles: "array",
+  showCommands: "array",
 };
 
 function getGlobalConfig() {

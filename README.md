@@ -54,7 +54,18 @@ this will be transformed to
 }
 ```
 
+
+After that, you can opt like above to set if some Commands need show
+```shell
+
+qt config showCommands -a <extra command e.g. repoAuthor>
+
+```
+And then, when you use init, the cli will ask you the command
+
+
 At last, you can use like `qt config git.name` to check your config
+Also you can find the `.quick-template` file in your system, and modify it to change the config
 
 
 ## Usage
