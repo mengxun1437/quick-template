@@ -11,12 +11,7 @@ const DEFAULT_CONFIG = {
     name: "quick-template",
   },
   // 全局替换
-  globalProps: [
-    "projectName",
-    "projectDescription",
-    "projectAuthor",
-    "repoAuthor",
-  ],
+  globalProps: ["projectName", "projectDescription", "projectAuthor"],
   // 模板选择
   templates: ["nodejs-cli"],
   // 需要全局替换的文件

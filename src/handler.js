@@ -16,7 +16,7 @@ const getExtraOptions = (template) =>
   globalConfig.extraCommands?.[template]?.map((i) => ({
     type: "input",
     name: i,
-    message: "Please input the extra command",
+    message: "Please input the extra command: " + template,
     default: `<${i}>`,
   })) || [];
 
@@ -171,6 +171,11 @@ function handleFiles(resp) {
   //   return;
   // }
 
+  const props = [
+    ...globalConfig.globalProps,
+    ...globalConfig?.extraCommands?.[resp.template],
+  ];
+
   // 全局变量替换
   function handleFile(_path) {
     const file = path.join(dir, `./${_path}`);
@@ -180,7 +185,7 @@ function handleFiles(resp) {
         encoding: "utf-8",
       });
       let replaced = source;
-      globalConfig.globalProps?.forEach((name) => {
+      props?.forEach((name) => {
         const reg = new RegExp("\\${" + name + "}", "g");
         replaced = replaced.replace(reg, resp?.[name] || "");
       });
