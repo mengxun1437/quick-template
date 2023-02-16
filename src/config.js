@@ -13,12 +13,13 @@ const DEFAULT_CONFIG = {
   // 全局替换
   globalProps: ["projectName", "projectDescription", "projectAuthor"],
   // 模板选择
-  templates: ["nodejs-cli"],
+  templates: ["nodejs", "nodejs-cli", "electron-nuxtify"],
   // 需要全局替换的文件
   handleFiles: ["package.json", "README.md"],
   // 需要展示给用户的命令, template, projectName, projectDescription, projectAuthor是必展示
   extraCommands: {
     "nodejs-cli": ["repoAuthor", "command"],
+    "electron-nuxtify": ["repoAuthor"],
   },
 };
 
