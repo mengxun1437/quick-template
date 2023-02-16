@@ -172,8 +172,8 @@ function handleFiles(resp) {
   // }
 
   const props = [
-    ...globalConfig.globalProps,
-    ...globalConfig?.extraCommands?.[resp.template],
+    ...(globalConfig.globalProps || []),
+    ...(globalConfig?.extraCommands?.[resp.template] || []),
   ];
 
   // 全局变量替换
