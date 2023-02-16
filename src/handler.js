@@ -12,16 +12,13 @@ const {
 
 const globalConfig = getGlobalConfig();
 
-const extraOptionsMap = {
-  repoAuthor: {
+const extraOptions =
+  globalConfig.extraCommands?.map((i) => ({
     type: "input",
-    name: "repoAuthor",
-    message: "Please input the username of your repo",
-    default: "<repoAuthor>",
-  },
-};
-
-const extraOptions = globalConfig.showCommands?.map((i) => extraOptionsMap[i]);
+    name: i,
+    message: "Please input the extra command",
+    default: `<${i}>`,
+  })) || [];
 
 const createOptions = [
   {

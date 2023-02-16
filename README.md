@@ -58,7 +58,7 @@ this will be transformed to
 After that, you can opt like above to set if some Commands need show
 ```shell
 
-qt config showCommands -a <extra command e.g. repoAuthor>
+qt config extraCommands -a <extra command e.g. repoAuthor>
 
 ```
 And then, when you use init, the cli will ask you the command

@@ -22,7 +22,7 @@ const DEFAULT_CONFIG = {
   // 需要全局替换的文件
   handleFiles: ["package.json", "README.md"],
   // 需要展示给用户的命令, template, projectName, projectDescription, projectAuthor是必展示
-  showCommands: ["repoAuthor"],
+  extraCommands: [],
 };
 
 const KEYS_TYPE_MAP = {
@@ -33,7 +33,7 @@ const KEYS_TYPE_MAP = {
   globalProps: "array",
   templates: "array",
   handleFiles: "array",
-  showCommands: "array",
+  extraCommands: "array",
 };
 
 function getGlobalConfig() {
