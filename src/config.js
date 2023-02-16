@@ -18,12 +18,16 @@ const DEFAULT_CONFIG = {
     "repoAuthor",
   ],
   // 模板选择
-  templates: [],
+  templates: ["nodejs-cli"],
   // 需要全局替换的文件
   handleFiles: ["package.json", "README.md"],
   // 需要展示给用户的命令, template, projectName, projectDescription, projectAuthor是必展示
-  extraCommands: [],
+  extraCommands: {
+    "nodejs-cli": ["repoAuthor"],
+  },
 };
+
+const globalConfig = getGlobalConfig();
 
 const KEYS_TYPE_MAP = {
   "git.type": "string",
@@ -33,8 +37,11 @@ const KEYS_TYPE_MAP = {
   globalProps: "array",
   templates: "array",
   handleFiles: "array",
-  extraCommands: "array",
 };
+
+Object.keys(globalConfig?.extraCommands || {}).forEach((template) => {
+  KEYS_TYPE_MAP["extraCommands." + template] = "array";
+});
 
 function getGlobalConfig() {
   try {
@@ -56,10 +63,14 @@ function getGlobalConfig() {
   }
 }
 
-function setGlobalConfig(globalProps) {
-  fs.writeFileSync(GLOBAL_CONFIG_PATH, JSON.stringify(globalProps), {
-    encoding: "utf-8",
-  });
+function setGlobalConfig(_globalConfig) {
+  fs.writeFileSync(
+    GLOBAL_CONFIG_PATH,
+    JSON.stringify(_globalConfig, undefined, 2),
+    {
+      encoding: "utf-8",
+    }
+  );
 }
 
 function getGitUrl(git) {

@@ -12,15 +12,15 @@ const {
 
 const globalConfig = getGlobalConfig();
 
-const extraOptions =
-  globalConfig.extraCommands?.map((i) => ({
+const getExtraOptions = (template) =>
+  globalConfig.extraCommands?.[template]?.map((i) => ({
     type: "input",
     name: i,
     message: "Please input the extra command",
     default: `<${i}>`,
   })) || [];
 
-const createOptions = [
+const chooseTemplateOptions = [
   {
     type: "list",
     name: "template",
@@ -30,6 +30,9 @@ const createOptions = [
       : ["default"],
     default: globalConfig.templates?.[0] ?? 0,
   },
+];
+
+const createOptions = (template) => [
   {
     type: "input",
     name: "projectName",
@@ -51,7 +54,7 @@ const createOptions = [
     message: "Please input the author of your project",
     default: "<projectAuthor>",
   },
-  ...extraOptions,
+  ...getExtraOptions(template),
   {
     type: "confirm",
     name: "createConfirm",
@@ -59,10 +62,10 @@ const createOptions = [
   },
 ];
 
-const createValidKeys = createOptions.map((i) => i.name);
-
 async function handleCreate() {
-  const resp = await inquirer.prompt(createOptions);
+  let dataChoose = await inquirer.prompt(chooseTemplateOptions);
+  let dataInput = await inquirer.prompt(createOptions(dataChoose.template));
+  const resp = { ...dataChoose, ...dataInput };
 
   if (!resp.createConfirm) {
     log("Sorry, you have canceled your choice!", "warning");
@@ -112,6 +115,25 @@ function handleConfig(str, option) {
       }
     }
     setGlobalConfig(globalConfig);
+  }
+}
+
+async function handleConfigEdit() {
+  const options = [
+    {
+      type: "editor",
+      message: "Please edit your config",
+      name: "editor",
+      default: JSON.stringify(globalConfig, undefined, 2),
+    },
+  ];
+  const resp = await inquirer.prompt(options);
+  try {
+    const data = JSON.parse(resp.editor);
+    setGlobalConfig(data);
+    log("edit config success", "success");
+  } catch (e) {
+    log(`edit config error: ${e.message}`, "error");
   }
 }
 
@@ -174,4 +196,5 @@ function handleFiles(resp) {
 module.exports = {
   handleCreate,
   handleConfig,
+  handleConfigEdit,
 };

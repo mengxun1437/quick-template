@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 const { program } = require("commander");
-const { handleCreate, handleConfig } = require("./handler");
+const { handleCreate, handleConfig, handleConfigEdit } = require("./handler");
 
 program
   .command("init")
@@ -14,5 +14,10 @@ program
   .option("-a, --add <value>", "add config options")
   .option("-d, --delete <value>", "delete config options")
   .action(handleConfig);
+
+program
+  .command("edit config")
+  .description("edit config in shell")
+  .action(handleConfigEdit);
 
 program.parse(process.argv);
